@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:qonvex_expandable_fab/assets/action_button.dart';
 import 'package:qonvex_expandable_fab/assets/expanding_action_button.dart';
 
-class ExpandableFab extends StatefulWidget {
+class QonvExpandableFab extends StatefulWidget {
   final bool? initialOpen;
   final double distance;
   final List<ActionButton> children;
   final Color color;
   final IconData activeIcon;
   final Color actionColor;
-  const ExpandableFab(
+  const QonvExpandableFab(
       {Key? key,
       this.initialOpen,
       required this.distance,
@@ -19,10 +19,10 @@ class ExpandableFab extends StatefulWidget {
       required this.activeIcon})
       : super(key: key);
   @override
-  _ExpandableFabState createState() => _ExpandableFabState();
+  _QonvExpandableFabState createState() => _QonvExpandableFabState();
 }
 
-class _ExpandableFabState extends State<ExpandableFab>
+class _QonvExpandableFabState extends State<QonvExpandableFab>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _expandAnimation;
