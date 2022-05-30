@@ -7,11 +7,16 @@ class QonvExpandableFab extends StatefulWidget {
   final double distance;
   final List<ActionButton> children;
   final Color color;
+  final Color? closeIconColor;
+  final Color? closeButtonColor;
+  // final Color
   final IconData activeIcon;
   final Color actionColor;
   const QonvExpandableFab(
       {Key? key,
       this.initialOpen,
+      this.closeButtonColor,
+      this.closeIconColor,
       required this.distance,
       required this.children,
       required this.color,
@@ -82,6 +87,7 @@ class _QonvExpandableFabState extends State<QonvExpandableFab>
       child: Center(
         child: Material(
           shape: const CircleBorder(),
+          color: widget.closeButtonColor ?? Colors.white,
           clipBehavior: Clip.antiAlias,
           elevation: 4.0,
           child: InkWell(
@@ -90,7 +96,7 @@ class _QonvExpandableFabState extends State<QonvExpandableFab>
               padding: const EdgeInsets.all(8.0),
               child: Icon(
                 Icons.close,
-                color: Theme.of(context).primaryColor,
+                color: widget.closeIconColor ?? Theme.of(context).primaryColor,
               ),
             ),
           ),
